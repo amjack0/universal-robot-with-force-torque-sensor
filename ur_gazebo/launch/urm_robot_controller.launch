@@ -1,0 +1,10 @@
+<launch>
+
+    <rosparam file="$(find ur_gazebo)/controller/urm_robot_control.yaml" command="load"/>
+
+    <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+          output="screen" ns="/urbot" args="joint_state_controller endeffector_frc_trq_controller_1 endeffector_frc_trq_controller_2 endeffector_frc_trq_controller_3  endeffector_frc_trq_controller_4 endeffector_frc_trq_controller_5 endeffector_frc_trq_controller_6"/>
+
+    <!--node name="rqt_publisher" pkg="rqt_publisher" type="rqt_publisher" /-->
+
+</launch>
